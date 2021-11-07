@@ -5,7 +5,7 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require 'spina/blog'
+require 'spina/admin/conferences/blog'
 
 module Dummy
   class Application < Rails::Application
