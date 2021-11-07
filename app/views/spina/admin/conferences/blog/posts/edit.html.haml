@@ -1,0 +1,3 @@
+= form_for [spina, :admin, :conferences, :blog, @post], url: spina.admin_conferences_blog_post_path(@post.id),
+  html: {id: 'post_form', autocomplete: "off"} do |f|
+  = render 'form', f: f

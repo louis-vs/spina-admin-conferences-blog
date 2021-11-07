@@ -1,0 +1,80 @@
+# frozen_string_literal: true
+
+module Spina
+  module Admin
+    module Conferences::Blog
+      # Spina::Admin::Conferences::Blog::CategoriesController
+      class CategoriesController < AdminController
+        before_action :category, except: %i[new create index]
+        before_action :set_breadcrumb
+        before_action :set_locale
+
+        decorates_assigned :category
+
+        layout 'spina/admin/conferences/blog/categories'
+
+        def index
+          @categories = Spina::Admin::Conferences::Blog::Category.order(:name)
+        end
+
+        def new
+          @category = Spina::Admin::Conferences::Blog::Category.new
+          add_breadcrumb I18n.t('spina.blog.categories.new')
+          render layout: 'spina/admin/admin'
+        end
+
+        def create
+          @category = Spina::Admin::Conferences::Blog::Category.new category_params
+          if @category.save
+            redirect_to spina.edit_admin_conferences_blog_category_url(@category.id),
+                        notice: t('spina.blog.categories.saved')
+          else
+            add_breadcrumb I18n.t('spina.blog.categories.new')
+            render :new, layout: 'spina/admin/admin'
+          end
+        end
+
+        def edit
+          add_breadcrumb @category.name
+          render layout: 'spina/admin/admin'
+        end
+
+        def update
+          if @category.update(category_params)
+            add_breadcrumb @category.name
+            redirect_to spina.edit_admin_conferences_blog_category_url(
+              @category.id, params: { locale: @locale }
+            ), notice: t('spina.blog.categories.saved')
+          else
+            render :edit, layout: 'spina/admin/admin'
+          end
+        end
+
+        def destroy
+          @category.destroy
+          redirect_to spina.admin_conferences_blog_categories_path
+        end
+
+        private
+
+        def set_breadcrumb
+          add_breadcrumb I18n.t('spina.blog.categories.name'),
+                         spina.admin_conferences_blog_categories_path
+        end
+
+        def category
+          @category = Spina::Admin::Conferences::Blog::Category.find params[:id]
+        end
+
+        def set_locale
+          @locale = params[:locale] || I18n.default_locale
+          I18n.locale = @locale
+        end
+
+        def category_params
+          params.require(:category).permit(:name)
+        end
+      end
+    end
+  end
+end

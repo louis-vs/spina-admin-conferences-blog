@@ -6,6 +6,6 @@ RSpec.configure do |c|
   end
 
   c.before(:each, type: :system, js: true) do
-    driven_by :chrome
+    driven_by :selenium
   end
 end

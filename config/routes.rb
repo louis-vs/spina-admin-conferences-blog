@@ -15,14 +15,16 @@ Spina::Engine.routes.draw do
     get 'archive/:year(/:month)', to: 'posts#archive', as: :archive_posts
   end
 
-  namespace :admin do
-    namespace :blog do
-      resources :categories
-      resources :posts, except: :show do
-        collection do
-          get :live
-          get :draft
-          get :future
+  namespace :admin, path: Spina.config.backend_path do
+    namespace :conferences do
+      namespace :blog do
+        resources :categories
+        resources :posts, except: :show do
+          collection do
+            get :live
+            get :draft
+            get :future
+          end
         end
       end
     end
