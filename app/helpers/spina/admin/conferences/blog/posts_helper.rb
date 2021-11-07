@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Spina
-  module Conferences::Blog
+  module Admin::Conferences::Blog
     # Spina::Blog::PostsHelper
     module PostsHelper
       def formatted_date(year, month)
