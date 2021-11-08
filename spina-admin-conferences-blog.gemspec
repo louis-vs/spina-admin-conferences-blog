@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ['louis@lvs.me.uk', 'tom@initforthe.com']
   s.homepage    = 'https://github.com/louis-vs/spina-admin-conferences-blog'
   s.summary     = 'Blog Engine for Spina CMS'
-  s.description = 'Blog Engine for Spina CMS comprising categories and posts'
+  s.description = 'A fork of spina-blog for Spina 2.0'
   s.license     = 'MIT'
   s.required_ruby_version = '~> 2.7'
 
@@ -22,22 +22,22 @@ Gem::Specification.new do |s|
   ]
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'draper', '>= 3.0.0', '<= 5.0'
-  s.add_dependency 'friendly_id', '~> 5.2', '>= 5.2.1'
-  s.add_dependency 'kaminari', '>= 1.0.1'
+  s.add_dependency 'draper', '~> 4.0.0'
+  s.add_dependency 'friendly_id', '~> 5.4'
+  s.add_dependency 'kaminari', '~> 1.2'
+  s.add_dependency 'rails', '~> 6.0'
   s.add_dependency 'spina', '~> 2.0.0'
-  s.add_dependency 'nokogiri', '~> 1.10', '>= 1.10.0'
+  s.add_dependency 'nokogiri', '~> 1.12'
 
-  s.add_development_dependency 'capybara', '>= 2.14.3'
-  s.add_development_dependency 'factory_bot_rails', '>= 4.0'
-  s.add_development_dependency 'pg'
+  s.add_development_dependency 'capybara', '~> 3.33'
+  s.add_development_dependency 'factory_bot_rails', '~> 6.2'
+  s.add_development_dependency 'pg', '~> 1.2'
   s.add_development_dependency 'pry-rails', '~> 0'
-  s.add_development_dependency 'puma'
-  s.add_development_dependency 'rails-controller-testing',
-                               '>= 1.0.2'
-  s.add_development_dependency 'rspec-rails', '>= 3.6.0'
-  s.add_development_dependency 'rubocop-rspec'
-  s.add_development_dependency 'selenium-webdriver'
-  s.add_development_dependency 'simplecov', '~> 0'
-  s.add_development_dependency 'webdrivers', '~> 3.0'
+  s.add_development_dependency 'puma', '~> 5.5'
+  s.add_development_dependency 'rails-controller-testing', '~> 1.0.5'
+  s.add_development_dependency 'rspec-rails', '~> 5.0'
+  s.add_development_dependency 'rubocop-rspec', '~> 2.5'
+  s.add_development_dependency 'selenium-webdriver', '~> 3.142'
+  s.add_development_dependency 'simplecov', '~> 0.19'
+  s.add_development_dependency 'webdrivers', '~> 4.4'
 end
