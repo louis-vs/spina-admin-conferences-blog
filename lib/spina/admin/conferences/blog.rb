@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require 'spina'
+require 'spina/admin/conferences/blog/configuration'
+require 'spina/admin/conferences/blog/version'
+require 'spina/admin/conferences/blog/engine'
 require 'friendly_id'
 require 'draper'
 require 'spina'
@@ -10,8 +14,9 @@ module Spina
   module Admin
     module Conferences
       module Blog
-        require 'spina/admin/conferences/blog/engine'
-        require 'spina/admin/conferences/blog/configuration'
+        def self.table_name_prefix
+          'spina_blog'
+        end
       end
     end
   end
