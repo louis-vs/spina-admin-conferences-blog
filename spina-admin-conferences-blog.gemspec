@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.push File.expand_path('lib', __dir__)
-require 'spina/admin'
-require 'spina/admin/conferences'
-require 'spina/admin/conferences/blog/version'
+require_relative 'lib/spina/admin/conferences/blog/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
@@ -11,21 +8,25 @@ Gem::Specification.new do |s|
   s.version     = Spina::Admin::Conferences::Blog::VERSION
   s.authors     = ['Louis Van Steene', 'Tom Simnett']
   s.email       = ['louis@lvs.me.uk', 'tom@initforthe.com']
-  s.homepage    = 'https://github.com/louis-vs/spina-conferences-blog'
+  s.homepage    = 'https://github.com/louis-vs/spina-admin-conferences-blog'
   s.summary     = 'Blog Engine for Spina CMS'
   s.description = 'Blog Engine for Spina CMS comprising categories and posts'
   s.license     = 'MIT'
+  s.required_ruby_version = '~> 2.7'
+
+  s.metadata['homepage_uri'] = s.homepage
+  s.metadata['source_code_uri'] = 'https://github.com/louis-vs/spina-admin-conferences-blog'
 
   s.files = Dir[
     '{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md'
   ]
   s.test_files = Dir['spec/**/*']
 
-  s.add_runtime_dependency 'draper', '>= 3.0.0', '<= 5.0'
-  s.add_runtime_dependency 'friendly_id', '~> 5.2', '>= 5.2.1'
-  s.add_runtime_dependency 'kaminari', '>= 1.0.1'
-  s.add_runtime_dependency 'spina', '~> 2.0.0'
-  s.add_runtime_dependency 'nokogiri', '~> 1.10', '>= 1.10.0'
+  s.add_dependency 'draper', '>= 3.0.0', '<= 5.0'
+  s.add_dependency 'friendly_id', '~> 5.2', '>= 5.2.1'
+  s.add_dependency 'kaminari', '>= 1.0.1'
+  s.add_dependency 'spina', '~> 2.0.0'
+  s.add_dependency 'nokogiri', '~> 1.10', '>= 1.10.0'
 
   s.add_development_dependency 'capybara', '>= 2.14.3'
   s.add_development_dependency 'factory_bot_rails', '>= 4.0'

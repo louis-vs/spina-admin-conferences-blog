@@ -2,7 +2,11 @@
 
 module Spina
   # Spina::Blog
-  module Admin::Conferences::Blog
-    VERSION = '0.1.0'
+  module Admin
+    module Conferences
+      module Blog
+        VERSION = '0.1.1'
+      end
+    end
   end
 end
