@@ -8,7 +8,7 @@
   <% end %>
   
   <% nav.links do %>
-    <%= render Spina::MainNavigation::LinkComponent.new(t('spina.blog.posts.title'), admin_blog_posts_path, active: request.path.start_with?("/#{Spina.config.backend_path}/blog/posts")) %>
-    <%= render Spina::MainNavigation::LinkComponent.new(t('spina.blog.categories.title'), admin_blog_categories_path, active: request.path.start_with?("/#{Spina.config.backend_path}/blog/categories")) %>
+    <%= render Spina::MainNavigation::LinkComponent.new(t('spina.blog.posts.title'), spina.admin_conferences_blog_posts_path, active: request.path.start_with?("/#{Spina.config.backend_path}/conferences/blog/posts")) %>
+    <%= render Spina::MainNavigation::LinkComponent.new(t('spina.blog.categories.title'), spina.admin_conferences_blog_categories_path, active: request.path.start_with?("/#{Spina.config.backend_path}/conferences/blog/categories")) %>
   <% end %>
 <% end %>
