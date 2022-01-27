@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rails-controller-testing', '~> 1.0.5'
   s.add_development_dependency 'rspec-rails', '~> 5.0'
   s.add_development_dependency 'rubocop-rspec', '~> 2.5'
-  s.add_development_dependency 'selenium-webdriver', '~> 3.142'
+  s.add_development_dependency 'selenium-webdriver', '~> 4.0'
   s.add_development_dependency 'simplecov', '~> 0.19'
   s.add_development_dependency 'webdrivers', '~> 4.4'
 end
