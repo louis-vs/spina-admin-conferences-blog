@@ -17,8 +17,8 @@ RSpec.feature 'Admin Posts', type: :system do
   describe 'creating a post' do
     it 'creates a post', js: true do
       visit '/admin/conferences/blog/posts'
-      find(:css, 'a[href="/admin/blog/posts/new"]').click
-      fill_in 'Post title', with: 'Title of Blog post'
+      find(:css, 'a[href="/admin/conferences/blog/posts/new"]').click
+      fill_in 'Title', with: 'Title of Blog post'
       find(
         :css, 'trix-editor[input*="content_input"]'
       ).set('Foobar')

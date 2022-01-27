@@ -5,6 +5,7 @@ FactoryBot.define do
     sequence(:title) { |n| "Blog Post #{n}" }
     content { 'Some content for my post' }
     association :category, factory: :spina_blog_category
+    association :user, factory: :spina_user
 
     seo_title { 'Some title for SEO' }
     description { 'Some description for SEO' }

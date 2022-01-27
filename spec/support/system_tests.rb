@@ -6,6 +6,6 @@ RSpec.configure do |c|
   end
 
   c.before(:each, type: :system, js: true) do
-    driven_by :selenium
+    driven_by :selenium, using: :headless_firefox, screen_size: [1400, 800]
   end
 end
