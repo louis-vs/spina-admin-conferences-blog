@@ -5,7 +5,7 @@ module Spina
   module Admin
     module Conferences
       module Blog
-        VERSION = '0.3.0'
+        VERSION = '0.3.1'
       end
     end
   end
