@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 module Spina
-  # Spina::Blog
   module Admin
     module Conferences
       module Blog
-        VERSION = '0.3.0'
+        # Base class for components
+        class ApplicationComponent < Spina::ApplicationComponent
+        end
       end
     end
   end

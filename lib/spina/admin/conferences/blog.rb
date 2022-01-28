@@ -15,7 +15,7 @@ module Spina
     module Conferences
       module Blog
         def self.table_name_prefix
-          'spina_blog'
+          'spina_blog_'
         end
       end
     end

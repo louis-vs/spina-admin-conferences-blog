@@ -4,7 +4,7 @@
       
       <% if @post.persisted? %>
         <!-- Translations -->
-        <%= render Spina::Pages::TranslationsComponent.new(@post, label: @locale.upcase) %>
+        <%= render Spina::Admin::Conferences::Blog::TranslationsComponent.new(@post, label: @locale.upcase) %>
       
         <%= render Spina::UserInterface::DropdownComponent.new do |dropdown| %>
           <% dropdown.button(classes: "btn btn-default px-3") do %>

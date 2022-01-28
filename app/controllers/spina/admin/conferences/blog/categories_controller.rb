@@ -4,7 +4,7 @@ module Spina
   module Admin
     module Conferences::Blog
       # Spina::Admin::Conferences::Blog::CategoriesController
-      class CategoriesController < AdminController
+      class CategoriesController < ::Spina::Admin::AdminController
         before_action :category, except: %i[new create index]
         before_action :set_breadcrumb
         before_action :set_locale

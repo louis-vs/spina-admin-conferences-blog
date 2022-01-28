@@ -27,6 +27,10 @@ module Spina
       scope :featured, -> { where(featured: true) }
       scope :unfeatured, -> { where(featured: false) }
 
+      translates :title, fallbacks: true
+      translates :description, :excerpt, :content
+      translates :seo_title, default: -> { title }
+
       def self.table_name
         'spina_blog_posts'
       end

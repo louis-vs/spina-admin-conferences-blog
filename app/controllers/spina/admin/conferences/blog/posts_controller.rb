@@ -4,7 +4,7 @@ module Spina
   module Admin
     module Conferences::Blog
       # Spina::Admin::Conferences::Blog::PostsController
-      class PostsController < AdminController
+      class PostsController < ::Spina::Admin::AdminController
         before_action :post, except: %i[index live draft future new create]
         before_action :set_breadcrumb
         before_action :set_tabs, only: %i[new create edit update]

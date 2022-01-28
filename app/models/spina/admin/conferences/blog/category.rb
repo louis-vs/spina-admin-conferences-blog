@@ -11,6 +11,8 @@ module Spina
       has_many :posts, class_name: 'Spina::Admin::Conferences::Blog::Post', inverse_of: :category
       validates :name, presence: true, uniqueness: { case_sensitive: false }
 
+      translates :name, fallbacks: true
+
       def to_s
         name
       end

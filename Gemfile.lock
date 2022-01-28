@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spina-admin-conferences-blog (0.2.0)
+    spina-admin-conferences-blog (0.3.0)
       draper (>= 3.0.0, <= 5.0)
       friendly_id (~> 5.2, >= 5.2.1)
       kaminari (>= 1.0.1)

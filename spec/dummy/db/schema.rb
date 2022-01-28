@@ -93,6 +93,30 @@ ActiveRecord::Schema.define(version: 2021_04_04_093002) do
     t.index ["slug"], name: "index_spina_blog_categories_on_slug"
   end
 
+  create_table "spina_blog_category_translations", force: :cascade do |t|
+    t.string "name"
+    t.string "locale", null: false
+    t.bigint "spina_blog_category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["locale"], name: "spina_blog_category_translations_on_locale"
+    t.index ["spina_blog_category_id", "locale"], name: "spina_blog_category_translations_on_locale_and_id", unique: true
+  end
+
+  create_table "spina_blog_post_translations", force: :cascade do |t|
+    t.string "title"
+    t.text "excerpt"
+    t.text "content"
+    t.string "seo_title"
+    t.text "description"
+    t.string "locale", null: false
+    t.bigint "spina_blog_post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["locale"], name: "spina_blog_post_translations_on_locale"
+    t.index ["spina_blog_post_id", "locale"], name: "spina_blog_post_translations_on_locale_and_id", unique: true
+  end
+
   create_table "spina_blog_posts", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "excerpt"
@@ -317,6 +341,8 @@ ActiveRecord::Schema.define(version: 2021_04_04_093002) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "spina_blog_category_translations", "spina_blog_categories"
+  add_foreign_key "spina_blog_post_translations", "spina_blog_posts"
   add_foreign_key "spina_blog_posts", "spina_images", column: "image_id"
   add_foreign_key "spina_blog_posts", "spina_users", column: "user_id"
 end
